@@ -16,7 +16,7 @@ export class UsersRepository {
   }
 
   async findAll(filterParams?: Prisma.UserWhereInput) {
-    return await this.prisma.post.findMany({
+    return await this.prisma.user.findMany({
       where: {},
     });
   }
