@@ -3,6 +3,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { UserEntity } from '../entities/user.entity';
+import { User, Prisma } from '@prisma/client';
 
 @Injectable()
 export class UsersRepository {
@@ -14,8 +15,10 @@ export class UsersRepository {
     });
   }
 
-  findAll() {
-    return this.prisma.user.findMany();
+  async findAll(filterParams?: Prisma.UserWhereInput) {
+    return await this.prisma.post.findMany({
+      where: {},
+    });
   }
 
   findOne(id: number) {

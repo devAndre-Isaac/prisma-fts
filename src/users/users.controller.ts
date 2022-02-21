@@ -21,8 +21,8 @@ export class UsersController {
   }
 
   @Get()
-  findAll() {
-    return this.usersService.findAll();
+  findAll(@Body() params?: any) {
+    return this.usersService.findAll(params);
   }
 
   @Get(':id')

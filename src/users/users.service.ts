@@ -10,8 +10,8 @@ export class UsersService {
     return this.repository.create(createUserDto);
   }
 
-  findAll() {
-    return this.repository.findAll();
+  findAll(params?: any) {
+    return this.repository.findAll(params);
   }
 
   findOne(id: number) {
